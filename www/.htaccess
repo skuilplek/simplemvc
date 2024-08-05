@@ -1,0 +1,26 @@
+Options -Indexes
+
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+    #Allow from 127.0.0.1
+</Files>
+
+<Files index.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+# 	RewriteCond %{REQUEST_URI} !^/docs/
+	RewriteRule ^(uploads|docs)($|/) - [L]
+	
+	RewriteRule ^([a-zA-Z-]*)/([a-zA-Z-]*)/([^/]*).html$ /index.php?ctrl=$1&action=$2&id=$3 [L]
+	RewriteRule ^([a-zA-Z-]*)/([a-zA-Z-]*).html$ /index.php?ctrl=$1&action=$2 [L]
+	RewriteRule ^([a-zA-Z-]*).html$ /index.php?ctrl=$1 [L]
+	
+	RewriteRule ^([a-zA-Z-]*)/([a-zA-Z-]*)/([^/]*)$ /index.php?ctrl=$1&action=$2&id=$3 [L]
+	RewriteRule ^([a-zA-Z-]*)/([a-zA-Z-]*)$ /index.php?ctrl=$1&action=$2 [L]
+	RewriteRule ^([a-zA-Z-]*)$ /index.php?ctrl=$1 [L]
+</IfModule>
+
