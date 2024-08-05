@@ -2,7 +2,7 @@
 
 class Router {
 
-    private $model = 'index'; //Defaul model
+    private $model = 'shoppinglist'; //Defaul model
     private $action = 'browse'; //Default method
     private $id = 0; //Default id
     
