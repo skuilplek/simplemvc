@@ -1,1 +1,2 @@
 # simplemvc
+I've opted for a super simple framework which auto-detects what needs to happen. There is a lot of room for improvement, and much can be done to smooth things out and provide many additional features and security improvements.

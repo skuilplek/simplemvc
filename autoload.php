@@ -23,5 +23,3 @@ function mvcAutoloader($className) {
 
     return false;
 }
-
-/** Descriptiong here */
